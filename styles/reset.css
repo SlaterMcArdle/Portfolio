@@ -1,0 +1,9 @@
+/* Setting the styles to a baseline across browsers */
+body {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    margin: 0;
+    padding: 0;
+}
