@@ -17,7 +17,8 @@
     <nav>
         <!-- Navbar title -->
         <header>
-            Slater McArdle
+            <!-- Make the header a link to the top of the page -->
+            <a href="#about-me-section">Slater McArdle</a>
         </header>
         <!-- Navigation links -->
         <ul>
@@ -31,14 +32,24 @@
         <!--About Me container-->
         <section id="about-me-section" class="container-section">
             <h2>About Me</h2>
-            <img src="./images/me.jpg" alt="Slater's smiling face with a big hat and sunglasses. A sand dune in the background.">
-            <p>
-                I'm a physicist turned engineer turned traveller. After almost three years globetrotting I came home and trained in web development. Find examples of my work below!
-            </p>
+            <hr>
+            <!-- wrap the image and paragraph in containers to allow easier flexbox control -->
+            <div id="about-me-image-container">
+                <img src="./images/me.jpg" alt="Slater's smiling face with a big hat and sunglasses. A sand dune in the background.">
+            </div>
+            <div id="about-me-text-container">
+                <p>
+                    I'm a physicist turned engineer turned traveller. I started my career in robotics, building and programming various automation systems. 
+                    Programming challenges ranged from microcontroller programming in C++ and Python to fully fleshed out desktop-based .NET automation programs. 
+                    I also dabbled in web-based remote web apps for long distance automation control. After two and a half years in the field I got itchy feet and decided to hitch my way around the world by boat. Three years and five boats later I'd made it halfway around the world.
+                    Then the pandemic hit and sent me home. It's been a few years, but I've decided to pursue my passion for programming in the form ov web development. Find examples of my work below!
+                </p>
+            </div>
         </section>
         <!-- Projects container -->
         <section id="portfolio-section" class="container-section">
             <h2>Projects</h2>
+            <hr/>
             <!-- Generate flexible cards for each of the projects -->
             <section id="first" class="portfolio-project">
                 <a href="https://github.com/" target="_blank"></a>
@@ -116,6 +127,7 @@
         <!--Contact container-->
         <section id="contact-section" class="container-section">
             <h2>Contact</h2>
+            <hr/>
             <ul>
                 <!-- Include icons for each of the contact links -->
                 <li><img src="./images/GitHub-Mark-32px.png"> <a href="https://github.com/WindWalker-92">Github</a></li>

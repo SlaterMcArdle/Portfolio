@@ -6,6 +6,7 @@
     --brand-arsenic: #3C3F58;
     --brand-rhythm: #60667c;
     --navbar-height: 3rem;
+    --navbar-height-mini: 4.5rem;
     --transition-time: 1.2s;
 }
 /* Assign universal attributes to the document */
@@ -23,6 +24,17 @@ a {
     font-size: 1.5rem;
     color: var(--brand-keppel);
 }
+/* center up the section headers and give them appropriate spacing */
+h2 {
+    text-align: center;
+    margin-bottom: 0.1rem;
+}
+/* style the themati breaks to the same color as the rest of the outstanding text and force horizontal in a flexbox environment */
+hr {
+    width: 100%;
+    background-color: var(--brand-keppel);
+    border-color: var(--brand-keppel);
+}
 /* Fix the navbar to the top of the page during scroll and style */
 nav {
     position: fixed;
@@ -31,14 +43,17 @@ nav {
     height: var(--navbar-height);
     background-color: var(--brand-arsenic);
 }
+/* force the header left and apply approprate styles and spacing */
 nav > header {
     float: left;
-    margin: 0.5rem auto;
+    margin: 0.5rem;
     font-size: 1.5rem;
 }
+/* force the nav links right (for larger displays */
 nav > ul {
     float: right;
 }
+/* style and space the navbar links */
 nav > ul > li {
     display: inline-block;
     justify-content: right;
@@ -52,6 +67,38 @@ main {
 .container-section {
     padding-top: var(--navbar-height);
 }
+/* set up the about me section as a  flexbox and center everything up */
+#about-me-section {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+/* ensure the section header is full width in the flexbox */
+#about-me-section > h2 {
+    flex-basis: 100%;
+}
+/* set up the image container flex and include code for the image to be properly contained */
+#about-me-image-container {
+   flex-basis: 30%;
+    position: relative;
+    margin: 1%;
+}
+/* set the paragraph container flex and spacing properties */
+#about-me-text-container {
+    flex-basis: 65%;
+    margin: 1%;
+}
+/* make the paragraph more blocklike */
+#about-me-text-container > p {
+    text-align: justify;
+}
+/* Contain the image within its container at full size */
+#about-me-image-container > img {
+   width: 100%;
+   object-fit: contain;
+}
 /* Customize the portfolio project container to flex */
 #portfolio-section {
     display: flex;
@@ -59,16 +106,16 @@ main {
     flex-wrap: wrap;
     justify-content:center;
 }
+/* Make the first project bigger than the rest */
+#first {
+    flex-basis: 90%;
+}
+/* set the rest of the cards to a standard, 2 column size with plenty of spacing */
 .portfolio-project {
     flex-basis: 40%;
     background-color: var(--brand-arsenic);
     position: relative;
     margin: 5%;
-}
-/* Make the first project bigger than the rest */
-#first {
-    flex-basis: 90%;
-    position: relative;
 }
 /* Make the entire portfolio project section a clickable link */
 .portfolio-project > a {
@@ -116,31 +163,70 @@ main {
 #portfolio-section > h2 {
     flex-basis: 100%;
 }
-#about-me-section > img {
-    height: 200px;
-}
 /* Adjust the size of the image-icons in the contact links */
 #contact-section img {
     width: 1.2rem;
     height: 1.2rem;
 }
-/* Position and style the contact section links */
+/* set up the contact section link list as a flexbox */
+#contact-section > ul {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+}
+/* Position and style the contact section links with flexbox */
 #contact-section > ul > li {
-    display: inline-block;
-    justify-content: left;
-    margin-right: 2rem;
-    margin-bottom: 2rem;
-    background-color: var(--brand-rhythm);
+    list-style-type: none;
+    background-color: var(--brand-outer-space);
     border-radius: 5px;
-    padding: 0.2rem;
+    flex-basis: 31%;
+    margin: 1%;
+    text-align: center;
 }
 /* Restyle footer link font size to match surrounding text */
 footer a {
     font-size: 1em;
 }
-/* Below a certain screen size, make all of the portfolio projects one column, keep the first project larger */
+/* Below a certain screen size, adjust for small displays */
 @media screen and (max-width: 730px) {
+    /* Set all of the portfolio projects in one column, and make them larger */
     .portfolio-project {
         flex-basis: 60%;
+    }
+    /* Make the about me image and paragraph aligned vertically and centered */
+    #about-me-section {
+        justify-content: center;
+    }
+    #about-me-image-container {
+        flex-basis: 70%;
+    }
+    #about-me-text-container {
+        flex-basis: 70%;
+        margin: 1% 0;
+    }
+    #contact-section > ul > li {
+        flex-basis: 90%;
+    }
+}
+/* Adjust the navbar for extra small displays. */
+@media screen and (max-width: 570px) {
+   /* make it taller to accomodate the two rows */
+    nav {
+        height: var(--navbar-height-mini);
+    }
+    /* make the header and link list into two rows */
+    nav > header {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+    }
+    nav > ul {
+        width: 100%;
+        text-align: center;
+    }
+    /* adjust the container padding to stay out from under the taller navbar on link clicks. */
+    .container-section {
+        padding-top: var(--navbar-height-mini);
     }
 }
