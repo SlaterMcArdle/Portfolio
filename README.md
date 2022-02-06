@@ -1,5 +1,5 @@
-# homework_02
-UCSD Coding Boot Camp Homework 02
+# Portfolio
+UCSD Coding Boot Camp Portfolio Project
 
 This week's criteria were as follows:
 

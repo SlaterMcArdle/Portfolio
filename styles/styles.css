@@ -52,6 +52,7 @@ nav > header {
 /* force the nav links right (for larger displays */
 nav > ul {
     float: right;
+    margin-right: 0.5rem;
 }
 /* style and space the navbar links */
 nav > ul > li {
