@@ -184,6 +184,10 @@ main {
     margin: 1%;
     text-align: center;
 }
+
+footer {
+    padding-left: 1em;
+}
 /* Restyle footer link font size to match surrounding text */
 footer a {
     font-size: 1em;
